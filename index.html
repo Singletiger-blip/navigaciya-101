@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Навігація у сучасних умовах (v12.0)</title>
+    <title>Навігація у сучасних умовах (v13.0)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@700;900&display=swap" rel="stylesheet">
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Roboto', sans-serif; 
-            scroll-behavior: smooth;
         }
         h1, h2, h3, h4, h5, h6, .font-extrabold, .font-bold {
             font-family: 'Roboto Slab', serif; 
@@ -183,6 +185,11 @@
             color: #ffffff;
             border-color: #b91c1c;
         }
+        
+        /* СТИЛЬ ДЛЯ КНОПКИ "НАГОРУ" */
+        #back-to-top {
+            transition: opacity 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-400">
@@ -203,7 +210,7 @@
                         <a href="#practical" class="text-slate-300 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium">Практична</a>
                         <a href="#self-check" class="text-slate-300 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium">Самоперевірка</a>
                         <a href="#testing" class="text-slate-300 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium">Тестування</a>
-                        <a href="#stop" class="text-slate-300 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium">S.T.O.P.</a>
+                        <a href="#conclusion" class="text-slate-300 hover:text-yellow-300 px-3 py-2 rounded-md text-sm font-medium">Висновок</a>
                     </div>
                 </div>
                 <div class="md:hidden">
@@ -224,7 +231,7 @@
                 <a href="#practical" class="nav-link-mobile block text-slate-300 hover:text-yellow-300 px-3 py-2 rounded-md text-base font-medium">Практична</a>
                 <a href="#self-check" class="nav-link-mobile block text-slate-300 hover:text-yellow-300 px-3 py-2 rounded-md text-base font-medium">Самоперевірка</a>
                 <a href="#testing" class="nav-link-mobile block text-slate-300 hover:text-yellow-300 px-3 py-2 rounded-md text-base font-medium">Тестування</a>
-                <a href="#stop" class="nav-link-mobile block text-slate-300 hover:text-yellow-300 px-3 py-2 rounded-md text-base font-medium">S.T.O.P.</a>
+                <a href="#conclusion" class="nav-link-mobile block text-slate-300 hover:text-yellow-300 px-3 py-2 rounded-md text-base font-medium">Висновок</a>
             </div>
         </div>
     </nav>
@@ -385,14 +392,36 @@
                 
                 <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
                     <h4 class="text-2xl font-bold text-yellow-300 mb-4 text-center">Навчальне Відео: Військова Топографія</h4>
+                    <p class="text-center text-sm text-yellow-500 mb-2">(Потребує підключення до Інтернету)</p>
                     <div class="rounded-lg shadow-xl overflow-hidden border border-slate-700">
                         <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/a_1NA-v4c5Y" title="ВІЙСЬКОВА ТОПОГРАФІЯ: Читання карти" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
 
+            <div class="bg-slate-900 p-8 rounded-lg shadow-lg mb-12 border border-slate-700">
+                <h3 class="text-3xl font-bold text-white mb-6">Теорія 5: Бусоль та Азимут</h3>
+                <p class="text-lg mb-4">Якщо Сонце дає похибку 10-15 градусів, то для артилерії потрібна точність до 1 градуса. Для цього існує **бусоль** (напр., ПАБ-2М) — високоточний компас з оптикою.</p>
+                <div class="grid md:grid-cols-2 gap-8 mt-8">
+                    <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+                        <h3 class="text-2xl font-bold text-yellow-300 mb-4">Що таке Азимут?</h3>
+                        <p class="text-lg">Це кут між напрямком на **Північ** та напрямком на **ціль**, який вимірюється **ЗА** годинниковою стрілкою.
+                        <br>• Північ = 0°
+                        <br>• Схід = 90°
+                        <br>• Південь = 180°
+                        <br>• Захід = 270°</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+                        <h3 class="text-2xl font-bold text-yellow-300 mb-4">Градуси vs. "Тисячні"</h3>
+                        <p class="text-lg">Військові використовують **"тисячні"**. У нашій системі коло ділиться на **6000** тисячних (у НАТО - 6400).
+                        <br>• 90° ≈ <span class="font-bold">15-00</span> (п'ятнадцять - нуль-нуль)
+                        <br>• 180° = <span class="font-bold">30-00</span> (тридцять - нуль-нуль)</p>
+                    </div>
+                </div>
+            </div>
+
             <div id="history" class="bg-slate-900 p-8 rounded-lg shadow-lg mb-12 border border-slate-700">
-                <h3 class="text-3xl font-bold text-white mb-6">Теорія 5: Історія, Інструменти та Помилки</h3>
+                <h3 class="text-3xl font-bold text-white mb-6">Теорія 6: Історія, Інструменти та Помилки</h3>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="space-y-6">
                         <div>
@@ -407,33 +436,82 @@
                             <div class="text-center my-4 p-4 border border-slate-700 rounded-lg bg-slate-800">
                                 <a href="https://uk.wikipedia.org/wiki/%D0%9A%D1%80%D0%BE%D0%BF%D0%B8%D0%B2%D0%B0_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BD%D0%B5_%D0%B7%D0%B0%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%BD%D1%8F)" target="_blank" class="text-yellow-300 hover:text-yellow-200 font-bold">Дізнатись більше: "Кропива" →</a>
                             </div>
-                            <p class="text-lg mt-4">Українська система бойового управління. **"Цифровий планшет" у реальному часі**, що об'єднує GPS, карти та дані з дронів.</p>
-                        </div>
-                        <div>
-                            <h4 class="text-2xl font-bold text-white mb-4">Теорія GPS</h4>
-                            <p class="text-lg mb-2">GPS — це "трилатерація" (міряє відстані).</p>
-                            <ul class="list-disc list-inside space-y-2 text-lg">
-                                <li><b>3 Супутники:</b> Достатньо для 2D-координат, "якщо" ваш годинник ідеально точний.</li>
-                                <li><span class="font-bold text-yellow-300">4-й Супутник:</span> Потрібен, щоб **синхронізувати ваш неточний годинник**.</li>
-                            </ul>
+                            <p class="text-lg mt-4">Українська система бойового управління. **"Цифровий планшет" у реальному часі**.</p>
                         </div>
                     </div>
                     <div class="space-y-6">
                         <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
-                            <h4 class="text-2xl font-bold text-white mb-4">"Знецінення": Трагедія Роберта Скотта (1912)</h4>
-                            <p class="text-lg mb-4">Скотт та Амундсен йшли до Південного полюса.</p>
-                            <ul class="list-disc list-inside space-y-2 text-lg">
-                                <li><b>Амундсен (Переміг):</b> Використав "перевірені" технології (собачі упряжки).</li>
-                                <li><b>Скотт (Загинув):</b> Використав "нові", але "неперевірені" технології (моторні сани), які зламалися.</li>
-                            </ul>
+                            <h4 class="text-2xl font-bold text-white mb-4">Трагедія Роберта Скотта (1912)</h4>
+                            <p class="text-lg mb-4"><b>Амундсен (Переміг):</b> Використав "перевірені" технології (собачі упряжки).<br><b>Скотт (Загинув):</b> Використав "неперевірені" технології (моторні сани), які зламалися.</p>
                         </div>
                         <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
-                            <h4 class="text-2xl font-bold text-white mb-4">"Збій алгоритму": Експедиція Франкліна (1845)</h4>
-                            <p class="text-lg mb-4">Їхні карти та навігація були ідеальними. Але їхні консерви (нова технологія!) були запаяні свинцем. Екіпаж повільно труївся свинцем, що призвело до божевілля і смерті.</p>
+                            <h4 class="text-2xl font-bold text-white mb-4">Експедиція Франкліна (1845)</h4>
+                            <p class="text-lg mb-4">Їхні карти та навігація були ідеальними. Але їхні консерви були запаяні свинцем. Екіпаж повільно труївся свинцем, що призвело до божевілля і смерті.</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div id="stop" class="bg-slate-900 p-8 rounded-lg shadow-lg mb-12 border border-slate-700">
+                <h3 class="text-3xl font-bold text-white text-center mb-12">Теорія 7: S.T.O.P. — Головний алгоритм мислення</h3>
+                <p class="text-center text-xl mb-8">Ви зрозуміли, що заблукали. Перша реакція — паніка. Це найгірше. Увімкніть мозок.</p>
+            
+                <div class="space-y-4 max-w-3xl mx-auto" id="accordion">
+                    <div class="bg-slate-800 rounded-lg shadow-lg border border-slate-700">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-6">
+                            <span class="text-4xl font-extrabold text-red-400">S (Stop) — Стій!</span>
+                            <span class="accordion-icon text-3xl text-slate-500 transform transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-lg">Негайно. Перестаньте рухатись. Попийте води. Дихайте. Паніка — ваш головний ворог.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg shadow-lg border border-slate-700">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-6">
+                            <span class="text-4xl font-extrabold text-yellow-300">T (Think) — Думай!</span>
+                            <span class="accordion-icon text-3xl text-slate-500 transform transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-lg">Де ви востаннє *точно* знали, де ви? Скільки часу пройшло? Що ви бачили? Що чули? Де Сонце?</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg shadow-lg border border-slate-700">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-6">
+                            <span class="text-4xl font-extrabold text-blue-400">O (Observe) — Спостерігай!</span>
+                            <span class="accordion-icon text-3xl text-slate-500 transform transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-lg">Які звуки? Машина? Річка? Гавкіт собак? Поїзд? Які сліди?</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg shadow-lg border border-slate-700">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-6">
+                            <span class="text-4xl font-extrabold text-green-400">P (Plan) — Плануй!</span>
+                            <span class="accordion-icon text-3xl text-slate-500 transform transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-lg">Складіть простий план. "Я піду на Південь до річки". "Я піду вздовж цієї лінії ЛЕП". Краще 10 хвилин думати і 1 годину йти правильно, ніж 1 годину бігти навмання.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -519,11 +597,12 @@
                 <h4 class="text-xl font-bold text-yellow-300 mb-2">Практичне Завдання:</h4>
                 <ol class="list-decimal list-inside space-y-2 text-lg mb-6">
                     <li>Відкрийте інтерактивну дошку (Excalidraw) у вікні нижче.</li>
-                    <li>Використовуючи інструмент "Лінія", намалюйте свій сектор обстрілу (дві лінії, що розходяться).</li>
+                    <li>Використовуючи інструмент "Лінія", намалюйте свій сектор обстрілу.</li>
                     <li>Інструментом "Текст", позначте: <b>СП</b> (свій спостережний пост), <b>Орієнтир 1 (Окр. дерево)</b>, <b>Орієнтир 2 (Руїни)</b>.</li>
-                    <li>Використовуючи знання з окоміру, пропишіть відстані (напр., "О1 - 250м").</li>
+                    <li>Пропишіть відстані (напр., "О1 - 250м").</li>
                     <li>Намалюйте умовний знак <b>мінного поля</b> (<b>...</b>) на небезпечному напрямку.</li>
                 </ol>
+                <p class="text-center text-sm text-yellow-500 mb-2">(Потребує підключення до Інтернету)</p>
                 <div class="rounded-lg shadow-xl overflow-hidden border border-slate-700">
                     <iframe src="https://excalidraw.com/"
                         width="100%" 
@@ -545,6 +624,7 @@
                         <li>Якщо це "Полярна" (Polaris) — вітаю, ти її знайшов!</li>
                     </ol>
                 </div>
+                <p class="text-center text-sm text-yellow-500 mb-2">(Потребує підключення до Інтернету)</p>
                 <div class="rounded-lg shadow-xl overflow-hidden border border-slate-700 mb-12">
                     <iframe src="https://stellarium-web.org/skysource/embed?horizontal=0&vertical=0&ecliptic=0&meridian=0&constellations=1&constellationlabels=1&gridlines_az=0&live=1&fov=120&lang=uk" 
                         width="100%" 
@@ -575,21 +655,13 @@
 
     <section id="practical" class="section flex items-center bg-slate-800 pt-24">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-extrabold text-white text-center mb-12">Частина 3: Практична Робота (м. Суми)</h2>
-            <p class="text-center text-xl mb-8">Використовуйте інтерактивну карту нижче, щоб виконати завдання, які поставить викладач.</p>
-
-            <div class="bg-slate-900 p-8 rounded-lg shadow-lg mb-8 border border-slate-700">
-                <h3 class="text-3xl font-bold text-white mb-6 text-center">Інтерактивна Карта (Суми)</h3>
+            <h2 class="text-4xl font-extrabold text-white text-center mb-12">Частина 3: Практична Робота</h2>
+            
+            <div class="bg-slate-900 p-8 rounded-lg shadow-lg mb-12 border border-slate-700">
+                <h3 class="text-3xl font-bold text-white mb-6 text-center">Практична 1: Робота з Цифровою Картою (Суми)</h3>
+                <p class="text-center text-xl mb-8">Використовуйте інтерактивну карту нижче, щоб виконати завдання.</p>
                 
-                <div class="bg-slate-800 p-6 rounded-lg shadow-lg border border-green-700 mb-6">
-                    <h3 class="text-2xl font-bold text-green-400 mb-4">⚡️ Приклади завдань для роботи в класі:</h3>
-                    <ol class="list-decimal list-inside space-y-2 text-lg">
-                        <li>Знайдіть на карті **Альтанку**. Натисніть на неї правою кнопкою миші. Які її географічні координати?</li>
-                        <li>Знайдіть **Парк ім. Кожедуба**. Використовуючи "Виміряти відстань", яка довжина центральної алеї?</li>
-                        <li>Вставте в пошук ці координати: <code class="bg-slate-700 text-yellow-300 p-1 rounded">50.9077, 34.7981</code>. Який об'єкт ви знайшли?</li>
-                    </ol>
-                </div>
-
+                <p class="text-center text-sm text-yellow-500 mb-2">(Потребує підключення до Інтернету)</p>
                 <div class="rounded-lg shadow-xl overflow-hidden border border-slate-700">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608160.444487212!2d30.402598207166164!3d49.81640304678255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d1d9c154700e8f%3A0x1068488f64010!2z0KPQutGA0LDQuNC90LA!5e0!3m2!1suk!2sua!4v1731349830588!5m2!1suk!2sua"
                         width="100%" 
@@ -600,26 +672,60 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-            </div>
-            
-            <div class="bg-slate-900 p-8 rounded-lg shadow-lg mb-8 border border-slate-700">
-                <h3 class="text-3xl font-bold text-white mb-6 text-center">Форма для відповідей (Для роботи в класі)</h3>
-                <div class="max-w-lg mx-auto space-y-4">
-                    <div>
-                        <label for="task1" class="block text-lg font-medium text-slate-200">Завдання 1: (Координати Альтанки)</label>
-                        <input type="text" id="task1" class="mt-1 block w-full rounded-md border-slate-600 bg-slate-800 shadow-sm focus:border-yellow-300 focus:ring-yellow-300 text-lg p-2">
+                
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg border border-green-700 mt-8">
+                    <h3 class="text-2xl font-bold text-green-400 mb-4">⚡️ Завдання для роботи в класі:</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="task1" class="block text-lg font-medium text-slate-200">1. Знайдіть на карті "Альтанку". Натисніть на неї правою кнопкою миші. Впишіть її координати:</label>
+                            <input type="text" id="task1" class="mt-1 block w-full rounded-md border-slate-600 bg-slate-900 shadow-sm focus:border-yellow-300 focus:ring-yellow-300 text-lg p-2">
+                        </div>
+                        <div>
+                            <label for="task2" class="block text-lg font-medium text-slate-200">2. Вставте в пошук ці координати: <code class="bg-slate-700 text-yellow-300 p-1 rounded">50.9077, 34.7981</code>. Який об'єкт ви знайшли?</label>
+                            <input type="text" id="task2" class="mt-1 block w-full rounded-md border-slate-600 bg-slate-900 shadow-sm focus:border-yellow-300 focus:ring-yellow-300 text-lg p-2">
+                        </div>
                     </div>
-                    <div>
-                        <label for="task2" class="block text-lg font-medium text-slate-200">Завдання 2: (Довжина алеї)</label>
-                        <input type="text" id="task2" class="mt-1 block w-full rounded-md border-slate-600 bg-slate-800 shadow-sm focus:border-yellow-300 focus:ring-yellow-300 text-lg p-2">
+                    <button id="practical-answers-button" class="mt-6 w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 text-lg">Показати/Сховати Відповіді</j>
+                    <div id="practical-answers-block" class="hidden mt-6 bg-slate-900 p-4 rounded border border-green-700 space-y-3">
+                        <p class="text-lg"><b>1. Відповідь:</b> Приблизні координати Альтанки: <code class="text-green-400">50.9085, 34.8000</code></p>
+                        <p class="text-lg"><b>2. Відповідь:</b> Це **"Сумський обласний краєзнавчий музей"**.</p>
                     </div>
-                    <div>
-                        <label for="task3" class="block text-lg font-medium text-slate-200">Завдання 3: (Об'єкт за координатами)</label>
-                        <input type="text" id="task3" class="mt-1 block w-full rounded-md border-slate-600 bg-slate-800 shadow-sm focus:border-yellow-300 focus:ring-yellow-300 text-lg p-2">
-                    </div>
-                    <button class="mt-6 w-full bg-yellow-600 text-slate-900 font-bold py-3 px-4 rounded-lg hover:bg-yellow-700 text-lg">Надіслати (Функція для майбутнього)</button>
                 </div>
             </div>
+            
+            <div class="bg-slate-900 p-8 rounded-lg shadow-lg mb-12 border border-slate-700">
+                <h3 class="text-3xl font-bold text-white mb-6 text-center">Практична 2: Читання Топографічної Карти</h3>
+                <p class="text-center text-xl mb-8">Уважно вивчіть приклад карти нижче і дайте відповіді на питання.</p>
+
+                <div class="rounded-lg shadow-xl overflow-hidden border border-slate-700 bg-white">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Reading_a_Military_Map.jpg" alt="Приклад топографічної карти">
+                </div>
+                
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg border border-green-700 mt-8">
+                    <h3 class="text-2xl font-bold text-green-400 mb-4">⚡️ Завдання для роботи в класі:</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="task-topo-1" class="block text-lg font-medium text-slate-200">1. В якому квадраті (4-значні коорд.) знаходиться Міст (Bridge)?</label>
+                            <input type="text" id="task-topo-1" class="mt-1 block w-full rounded-md border-slate-600 bg-slate-900 shadow-sm focus:border-yellow-300 focus:ring-yellow-300 text-lg p-2" placeholder="Напр., 1234">
+                        </div>
+                        <div>
+                            <label for="task-topo-2" class="block text-lg font-medium text-slate-200">2. Назвіть 6-значні координати Пагорба (Hill) 452?</label>
+                            <input type="text" id="task-topo-2" class="mt-1 block w-full rounded-md border-slate-600 bg-slate-900 shadow-sm focus:border-yellow-300 focus:ring-yellow-300 text-lg p-2" placeholder="Напр., 123456">
+                        </div>
+                         <div>
+                            <label for="task-topo-3" class="block text-lg font-medium text-slate-200">3. Що знаходиться у квадраті 1283?</label>
+                            <input type="text" id="task-topo-3" class="mt-1 block w-full rounded-md border-slate-600 bg-slate-900 shadow-sm focus:border-yellow-300 focus:ring-yellow-300 text-lg p-2">
+                        </div>
+                    </div>
+                    <button id="topo-practical-answers-button" class="mt-6 w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 text-lg">Показати/Сховати Відповіді</j>
+                    <div id="topo-practical-answers-block" class="hidden mt-6 bg-slate-900 p-4 rounded border border-green-700 space-y-3">
+                        <p class="text-lg"><b>1. Відповідь:</b> Квадрат **1383**. (Вправо до 13, Вгору до 83).</p>
+                        <p class="text-lg"><b>2. Відповідь:</b> **115834**. (Вправо 11, потім 5/10; Вгору 83, потім 4/10).</p>
+                        <p class="text-lg"><b>3. Відповідь:</b> **Церква** (Church).</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -745,77 +851,22 @@
         </div>
     </section>
 
-    <section id="stop" class="section flex items-center bg-slate-900">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-extrabold text-white text-center mb-12">Частина 7. S.T.O.P. — Головний алгоритм мислення</h2>
-            <p class="text-center text-xl mb-8">Ви зрозуміли, що заблукали. Перша реакція — паніка. Це найгірше. Увімкніть мозок.</p>
-            
-            <div class="space-y-4" id="accordion">
-                <div class="bg-slate-800 rounded-lg shadow-lg border border-slate-700">
-                    <button class="accordion-button w-full flex justify-between items-center text-left p-6">
-                        <span class="text-4xl font-extrabold text-red-400">S (Stop) — Стій!</span>
-                        <span class="accordion-icon text-3xl text-slate-500 transform transition-transform duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="accordion-content px-6 pb-6">
-                        <p class="text-lg">Негайно. Перестаньте рухатись. Попийте води. Дихайте. Паніка — ваш головний ворог.</p>
-                    </div>
-                </div>
-                <div class="bg-slate-800 rounded-lg shadow-lg border border-slate-700">
-                    <button class="accordion-button w-full flex justify-between items-center text-left p-6">
-                        <span class="text-4xl font-extrabold text-yellow-300">T (Think) — Думай!</span>
-                        <span class="accordion-icon text-3xl text-slate-500 transform transition-transform duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="accordion-content px-6 pb-6">
-                        <p class="text-lg">Де ви востаннє *точно* знали, де ви? Скільки часу пройшло? Що ви бачили? Що чули? Де Сонце?</p>
-                    </div>
-                </div>
-                <div class="bg-slate-800 rounded-lg shadow-lg border border-slate-700">
-                    <button class="accordion-button w-full flex justify-between items-center text-left p-6">
-                        <span class="text-4xl font-extrabold text-blue-400">O (Observe) — Спостерігай!</span>
-                        <span class="accordion-icon text-3xl text-slate-500 transform transition-transform duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="accordion-content px-6 pb-6">
-                        <p class="text-lg">Які звуки? Машина? Річка? Гавкіт собак? Поїзд? Які сліди?</p>
-                    </div>
-                </div>
-                <div class="bg-slate-800 rounded-lg shadow-lg border border-slate-700">
-                    <button class="accordion-button w-full flex justify-between items-center text-left p-6">
-                        <span class="text-4xl font-extrabold text-green-400">P (Plan) — Плануй!</span>
-                        <span class="accordion-icon text-3xl text-slate-500 transform transition-transform duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="accordion-content px-6 pb-6">
-                        <p class="text-lg">Складіть простий план. "Я піду на Південь до річки". "Я піду вздовж цієї лінії ЛЕП". Краще 10 хвилин думати і 1 годину йти правильно, ніж 1 годину бігти навмання.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <footer id="conclusion" class="bg-slate-950 text-white py-16">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-4xl font-extrabold mb-8">Висновок</h2>
             <p class="text-2xl text-slate-300 mb-4">Ваш телефон сяде. Ваш GPS "придушать". Ваша карта може згоріти.</p>
             <p class="text-3xl font-bold text-yellow-300">Але ваш мозок і ці знання — те, що "завжди" з вами.</p>
-            <p class="text-2xl text-slate-300 mt-4">У сучасному бою, де все вирішують секунди, "своєчасне визначення свого місцеположення" (як це робить "Кропива") — це різниця між життям і смертю. Але коли цифра "ляже", виживе той, хто вміє думати.</p>
+            <p class="text-2xl text-slate-300 mt-4">У сучасному бою, де все вирішують секунди, "своєчасне визначення свого місцеположення" — це різниця між життям і смертю. Але коли цифра "ляже", виживе той, хто вміє думати.</p>
             <p class="text-2xl text-slate-300 mt-4">Вчіться думати. Вчіться бачити. <br><span class="font-bold">Це те, що врятує вам життя.</span></p>
         </div>
     </footer>
+
+    <button id="back-to-top" class="hidden fixed bottom-5 right-5 bg-yellow-500 text-slate-900 p-3 rounded-full shadow-lg hover:bg-yellow-400 focus:outline-none z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+        </svg>
+    </button>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -840,10 +891,13 @@
                     const targetElement = document.querySelector(targetId);
                     
                     if(targetElement) {
+                        // Вираховуємо 64px (висота навігації)
+                        const targetPosition = targetElement.offsetTop - 64;
                         window.scrollTo({
-                            top: targetElement.offsetTop - 64, 
+                            top: targetPosition, 
                             behavior: 'smooth'
                         });
+                        // Закриваємо мобільне меню
                         if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                             setTimeout(() => {
                                 mobileMenu.classList.add('hidden');
@@ -892,7 +946,7 @@
 
                 const hour24 = parseInt(slider.value);
                 let hour12 = hour24 % 12;
-                if (hour12 === 0) hour12 = 12; // 12:00, 00:00
+                if (hour12 === 0) hour12 = 12; // 12:00
 
                 if (timeLabel) timeLabel.textContent = `${hour24 < 10 ? '0' : ''}${hour24}:00`;
 
@@ -937,11 +991,11 @@
                     if(targetLine) targetLine.style.transform = `rotate(${angle}deg)`; 
                     if(azimuthValue) azimuthValue.textContent = angle;
                 });
-                if(targetLine) targetLine.style.transform = `rotate(0deg)`; // Початкове значення
+                if(targetLine) targetLine.style.transform = `rotate(0deg)`; 
             }
 
             // ===========================================
-            // 5. Калькулятори відстані
+            // 5. Калькулятори
             // ===========================================
             const thumbJump = document.getElementById('thumb-jump');
             const thumbCalc = document.getElementById('thumb-calc');
@@ -993,7 +1047,6 @@
                     }
                 });
             }
-
 
             // ===========================================
             // 6. ЛАЙВ-ГОДИННИК
@@ -1048,7 +1101,7 @@
             const checkAnswerButton = document.getElementById('check-answer-button');
             const nextQuestionButton = document.getElementById('next-question-button');
             const quizMessage = document.getElementById('quiz-message');
-            const answersBlock = document.getElementById('all-answers-block'); // Посилання на блок з відповідями
+            const selfCheckAnswersBlock = document.getElementById('all-answers-block'); 
 
             function shuffleArray(array) {
                 for (let i = array.length - 1; i > 0; i--) {
@@ -1086,7 +1139,8 @@
                         quizInput.classList.add('border-green-500');
                         quizInput.classList.remove('border-red-500');
                     }
-                    if(answersBlock) answersBlock.classList.remove('hidden');
+                    // Розблокування відповіді в іншому розділі
+                    if(selfCheckAnswersBlock) selfCheckAnswersBlock.classList.remove('hidden');
 
                 } else {
                     if(quizMessage) {
@@ -1114,16 +1168,33 @@
             }
 
             // ===========================================
-            // 8. КНОПКА "ПОКАЗАТИ ВІДПОВІДІ" (САМОПЕРЕВІРКА)
+            // 8. КНОПКИ "ПОКАЗАТИ ВІДПОВІДІ"
             // ===========================================
             const showAllAnswersButton = document.getElementById('show-all-answers-button');
-            const allAnswersBlock = document.getElementById('all-answers-block'); // Вже визначено вище, але для надійності
-
-            if (showAllAnswersButton && allAnswersBlock) {
+            if (showAllAnswersButton && selfCheckAnswersBlock) {
                 showAllAnswersButton.addEventListener('click', () => {
-                    allAnswersBlock.classList.toggle('hidden');
+                    selfCheckAnswersBlock.classList.toggle('hidden');
                 });
             }
+            
+            // Кнопка для практичної роботи (Google Maps)
+            const practicalAnswersButton = document.getElementById('practical-answers-button');
+            const practicalAnswersBlock = document.getElementById('practical-answers-block');
+            if (practicalAnswersButton && practicalAnswersBlock) {
+                practicalAnswersButton.addEventListener('click', () => {
+                    practicalAnswersBlock.classList.toggle('hidden');
+                });
+            }
+
+            // Кнопка для практичної роботи (Топо-карта)
+            const topoPracticalAnswersButton = document.getElementById('topo-practical-answers-button');
+            const topoPracticalAnswersBlock = document.getElementById('topo-practical-answers-block');
+            if (topoPracticalAnswersButton && topoPracticalAnswersBlock) {
+                topoPracticalAnswersButton.addEventListener('click', () => {
+                    topoPracticalAnswersBlock.classList.toggle('hidden');
+                });
+            }
+
 
             // ===========================================
             // 9. ЛОГІКА ТЕСТУ З ТОПОГРАФІЇ
@@ -1149,6 +1220,25 @@
                             }
                         });
                     });
+                });
+            }
+
+            // ===========================================
+            // 10. КНОПКА "НАГОРУ"
+            // ===========================================
+            const backToTopButton = document.getElementById('back-to-top');
+
+            if (backToTopButton) {
+                window.onscroll = () => {
+                    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                        backToTopButton.classList.remove('hidden');
+                    } else {
+                        backToTopButton.classList.add('hidden');
+                    }
+                };
+
+                backToTopButton.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
             
