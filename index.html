@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Навігація у сучасних умовах (v13.0)</title>
+    <title>Навігація у сучасних умовах (v14.0)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -598,7 +598,7 @@
                 <div class="mb-8">
                     <h4 class="text-xl font-bold text-yellow-300 mb-2 text-center">Приклад простої карти вогню</h4>
                     <div class="rounded-lg shadow-xl overflow-hidden border border-slate-700 bg-white p-2">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Example_of_a_Sector_sketch_Firing_card.jpg/1024px-Example_of_a_Sector_sketch_Firing_card.jpg" alt="Приклад карти вогню">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/13246665400539667967_0" alt="Приклад карти вогню">
                     </div>
                 </div>
 
@@ -706,7 +706,7 @@
                 <p class="text-center text-xl mb-8">Уважно вивчіть приклад карти нижче і дайте відповіді на питання.</p>
 
                 <div class="rounded-lg shadow-xl overflow-hidden border border-slate-700 bg-white">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Reading_a_Military_Map.jpg" alt="Приклад топографічної карти">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/9386121965411236475_0" alt="Приклад топографічної карти">
                 </div>
                 
                 <div class="bg-slate-800 p-6 rounded-lg shadow-lg border border-green-700 mt-8">
@@ -894,22 +894,29 @@
 
             navLinks.forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
+                    const href = this.getAttribute('href');
                     
-                    if(targetElement) {
-                        const targetPosition = targetElement.offsetTop - 64; // 64px - висота навігації
-                        window.scrollTo({
-                            top: targetPosition, 
-                            behavior: 'smooth'
-                        });
-                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                            setTimeout(() => {
-                                mobileMenu.classList.add('hidden');
-                            }, 300);
+                    // Перевіряємо, чи це не посилання на головну сторінку
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href;
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if(targetElement) {
+                            const targetPosition = targetElement.offsetTop - 64; // 64px - висота навігації
+                            window.scrollTo({
+                                top: targetPosition, 
+                                behavior: 'smooth'
+                            });
+                            // Закриваємо мобільне меню
+                            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                                setTimeout(() => {
+                                    mobileMenu.classList.add('hidden');
+                                }, 300);
+                            }
                         }
                     }
+                    // Якщо це 'index.html', нічого не робимо, браузер перейде сам
                 });
             });
 
@@ -1108,7 +1115,7 @@
             const checkAnswerButton = document.getElementById('check-answer-button');
             const nextQuestionButton = document.getElementById('next-question-button');
             const quizMessage = document.getElementById('quiz-message');
-            const selfCheckAnswersBlock = document.getElementById('all-answers-block'); 
+            const selfCheckAnswersBlock = document.getElementById('all-answers-block'); // Посилання на блок з відповідями
 
             function shuffleArray(array) {
                 for (let i = array.length - 1; i > 0; i--) {
@@ -1133,31 +1140,26 @@
             }
 
             function checkAnswer() {
+                if(!quizInput || !quizMessage) return;
+                
                 const questionData = quizQuestions[currentQuestionIndex];
                 const userAnswer = parseInt(quizInput.value);
 
                 if (userAnswer === questionData.answer) {
-                    if(quizMessage) {
-                        quizMessage.textContent = "Правильно! Відповіді на питання для самоперевірки розблоковано.";
-                        quizMessage.classList.remove('hidden', 'text-red-400');
-                        quizMessage.classList.add('text-green-400');
-                    }
-                    if(quizInput) {
-                        quizInput.classList.add('border-green-500');
-                        quizInput.classList.remove('border-red-500');
-                    }
+                    quizMessage.textContent = "Правильно! Відповіді на питання для самоперевірки розблоковано.";
+                    quizMessage.classList.remove('hidden', 'text-red-400');
+                    quizMessage.classList.add('text-green-400');
+                    quizInput.classList.add('border-green-500');
+                    quizInput.classList.remove('border-red-500');
+                    
                     if(selfCheckAnswersBlock) selfCheckAnswersBlock.classList.remove('hidden');
 
                 } else {
-                    if(quizMessage) {
-                        quizMessage.textContent = "Неправильно! Спробуйте ще раз або змініть питання.";
-                        quizMessage.classList.remove('hidden', 'text-green-400');
-                        quizMessage.classList.add('text-red-400');
-                    }
-                    if(quizInput) {
-                        quizInput.classList.add('border-red-500');
-                        quizInput.classList.remove('border-green-500');
-                    }
+                    quizMessage.textContent = "Неправильно! Спробуйте ще раз або змініть питання.";
+                    quizMessage.classList.remove('hidden', 'text-green-400');
+                    quizMessage.classList.add('text-red-400');
+                    quizInput.classList.add('border-red-500');
+                    quizInput.classList.remove('border-green-500');
                 }
             }
 
